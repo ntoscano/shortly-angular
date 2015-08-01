@@ -1,3 +1,21 @@
 <div id='container'>
-  <!-- Your html here -->
+  <div id='container' ng-controller='LinksController'>
+    <form>
+        <input class='text' type='text' name='url' placeholder='filter'>
+    </form>
+    <!-- <img class='spinner' src='/assets/spiffygif_46x46.gif'> -->
+    <!-- <div class='message'></div> -->
+
+    <div class='link' ng-repeat='links in data.links.data'>
+      <img src='/assets/redirect_icon.png'/>
+      <div class='visits'><span class='count'>{{ links.visits }}</span>Visits</div>
+      <div class='title'>{{ links.title}}</div>
+      <div class='original'>{{ links.url}}</div>
+      <a href='{{base_url}}/{{code}}'>{{links.base_url}}/{{links.code}}</a>
+    </div>
+
+
+  </div>
+
+
 </div>
