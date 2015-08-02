@@ -1,8 +1,10 @@
 <div id='container' class='creator' ng-controller='ShortenController as shorten'>
 <!-- Your code here -->
-<form>
-    <input class='text' type='text' name='url'>
-    <input type='submit' value='submit' ng-click="addLink('http://www.yahoo.com')" >
+<form ng-submit='addLink()' name='form1'>
+    <input class='text' type='url' ng-model='link.link' input='url' name='name'>
+    <span style="color:red" ng-show="form1.name.$error.url">
+           Sorry Not a Valid URL, Don't Forget to Use http://</span>
+    <input type='submit' value='submit'>
 </form>
 
 
