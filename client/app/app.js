@@ -23,13 +23,17 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html', 
       controller: 'ShortenController'
     })
-    .when('/', {
-      templateUrl: 'app/links/links.html',
+    .when('/signin', {
+      templateUrl: 'app/auth/signin.html',
       controller: 'LinksController'
+    })
+    .when('/signup', {
+      templateUrl: 'app/auth/signup.html',
+      controller: 'AuthController'
     })
     .otherwise({
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'AuthController'
     })
     // Your code here
 

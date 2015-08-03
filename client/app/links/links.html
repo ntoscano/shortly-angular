@@ -1,16 +1,13 @@
-<div id='container'>
-  <div id='container' ng-controller='LinksController'>
+<div id="container">
+  <div id="container" ng-controller="LinksController">
     <form>
-        <input class='text' type='text' name='url' placeholder='filter'>
+        <input class="text" type="text" ng-model="search">
     </form>
-    <!-- <img class='spinner' src='/assets/spiffygif_46x46.gif'> -->
-    <!-- <div class='message'></div> -->
-
-    <div class='link' ng-repeat='link in data.links.data'>
-      <img src='/assets/redirect_icon.png'/>
-      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
-      <div class='title'>{{ link.title }}</div>
-      <div class='original'>{{ link.url }}</div>
+    <div class="link" ng-repeat="link in data.links.data | orderBy : '-visits' | filter: search ">
+      <img src="/assets/redirect_icon.png"/>
+      <div class="visits"><span class="count">{{ link.visits }}</span>Visits</div>
+      <div class="title">{{ link.title }}</div>
+      <div class="original">{{ link.url }}</div>
       <a href="{{ link.base_url }}/api/links/{{ link.code }}">{{ link.base_url }}/api/links/{{ link.code }}</a>
     </div>
 
