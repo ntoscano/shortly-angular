@@ -2,7 +2,7 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, $http, Links) {
   $scope.link = {
-    link : 'http://test.com'
+    link : ''
   };
   $scope.addLink = function(){
     if($scope.link.link){

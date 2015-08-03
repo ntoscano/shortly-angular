@@ -6,12 +6,12 @@
     <!-- <img class='spinner' src='/assets/spiffygif_46x46.gif'> -->
     <!-- <div class='message'></div> -->
 
-    <div class='link' ng-repeat='links in data.links.data'>
+    <div class='link' ng-repeat='link in data.links.data'>
       <img src='/assets/redirect_icon.png'/>
-      <div class='visits'><span class='count'>{{ links.visits }}</span>Visits</div>
-      <div class='title'>{{ links.title}}</div>
-      <div class='original'>{{ links.url}}</div>
-      <a href='{{base_url}}/{{code}}'>{{links.base_url}}/{{links.code}}</a>
+      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+      <div class='title'>{{ link.title}}</div>
+      <div class='original'>{{ link.url}}</div>
+      <a href="{{link.url}}">{{link.base_url}}/api/links/{{link.code}}</a>
     </div>
 
 
